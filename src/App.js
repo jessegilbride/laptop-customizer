@@ -12,7 +12,7 @@ const USCurrencyFormat = new Intl.NumberFormat('en-US', {
 class App extends Component {
   state = {
     selected: {
-      'Processor': {
+      Processor: {
         name: '17th Generation Intel Core HB (7 Core with donut spare)',
         cost: 700
       },
@@ -24,7 +24,7 @@ class App extends Component {
         name: 'Toyota Corolla 1.5v',
         cost: 1150.98
       },
-      'Display': {
+      Display: {
         name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
         cost: 1500
       }
