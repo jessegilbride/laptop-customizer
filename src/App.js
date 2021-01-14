@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-// Normalizes string as a slug - a string that is safe to use in both URLs and html attributes
-import slugify from 'slugify';
+/* // Normalizes string as a slug - a string that is safe to use in both URLs and html attributes
+import slugify from 'slugify'; */
+import Total from "./Total";
 import './App.css';
+import Cart from './Cart';
+import Features from './Features';
 
 // This object will allow us to easily convert numbers into US dollar values
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
@@ -31,16 +34,17 @@ class App extends Component {
     }
   };
 
-  updateFeature = (feature, newValue) => {
+  /* updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
     this.setState({
       selected
     });
-  };
+  }; */
 
   render() {
-    const features = Object.keys(this.props.features).map((feature, idx) => {
+    
+    /* const features = Object.keys(this.props.features).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
       const options = this.props.features[feature].map(item => {
         const itemHash = slugify(JSON.stringify(item));
@@ -69,9 +73,9 @@ class App extends Component {
           {options}
         </fieldset>
       );
-    });
+    }); */
 
-    const summary = Object.keys(this.state.selected).map((feature, idx) => {
+    /* const summary = Object.keys(this.state.selected).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
       const selectedOption = this.state.selected[feature];
 
@@ -84,12 +88,12 @@ class App extends Component {
           </div>
         </div>
       );
-    });
+    }); */
 
-    const total = Object.keys(this.state.selected).reduce(
+    /* const total = Object.keys(this.state.selected).reduce(
       (acc, curr) => acc + this.state.selected[curr].cost,
       0
-    );
+    ); */
 
     return (
       <div className="App">
@@ -100,18 +104,33 @@ class App extends Component {
 
           <form className="main__form">
             <h2>Customize your laptop</h2>
-            {features}
+            {/* {features} */}
+            <Features 
+              USCurrencyFormat={USCurrencyFormat} 
+              optionsSelected={this.state.selected} 
+              features={this.props.features}
+            />
           </form>
 
           <section className="main__summary">
             <h2>Your cart</h2>
-            {summary}
-            <div className="summary__total">
+
+            {/* {summary} */}
+            <Cart 
+              USCurrencyFormat={USCurrencyFormat} 
+              state={this.state} 
+            />
+
+            {/* <div className="summary__total">
               <div className="summary__total__label">Total</div>
               <div className="summary__total__value">
                 {USCurrencyFormat.format(total)}
               </div>
-            </div>
+            </div> */}
+            <Total 
+              USCurrencyFormat={USCurrencyFormat} 
+              state={this.state} 
+            />
           </section>
 
         </main>

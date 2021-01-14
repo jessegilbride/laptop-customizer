@@ -46,4 +46,6 @@ const FEATURES = {
   ]
 };
 
+console.clear();
+
 ReactDOM.render(<App features={FEATURES}/>, document.getElementById('root'));

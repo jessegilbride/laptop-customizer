@@ -141,5 +141,5 @@ while keeping them available to the keyboard */
 }
 
 .summary__total__value {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
