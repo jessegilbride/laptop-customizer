@@ -7,10 +7,10 @@ import Cart from './Cart';
 import Features from './Features';
 
 // This object will allow us to easily convert numbers into US dollar values
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD'
-});
+// const USCurrencyFormat = new Intl.NumberFormat('en-US', {
+//   style: 'currency',
+//   currency: 'USD'
+// });
 
 class App extends Component {
   state = {
@@ -34,13 +34,13 @@ class App extends Component {
     }
   };
 
-  /* updateFeature = (feature, newValue) => {
+  updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
     this.setState({
       selected
     });
-  }; */
+  };
 
   render() {
     
@@ -106,9 +106,11 @@ class App extends Component {
             <h2>Customize your laptop</h2>
             {/* {features} */}
             <Features 
-              USCurrencyFormat={USCurrencyFormat} 
+              // USCurrencyFormat={USCurrencyFormat} 
               optionsSelected={this.state.selected} 
               features={this.props.features}
+              // onUpdateFeature={(feature, newValue) => this.updateFeature(feature, newValue)}
+              onUpdateFeature={this.updateFeature}
             />
           </form>
 
@@ -117,7 +119,7 @@ class App extends Component {
 
             {/* {summary} */}
             <Cart 
-              USCurrencyFormat={USCurrencyFormat} 
+              // USCurrencyFormat={USCurrencyFormat} 
               state={this.state} 
             />
 
@@ -128,7 +130,7 @@ class App extends Component {
               </div>
             </div> */}
             <Total 
-              USCurrencyFormat={USCurrencyFormat} 
+              // USCurrencyFormat={USCurrencyFormat} 
               state={this.state} 
             />
           </section>
