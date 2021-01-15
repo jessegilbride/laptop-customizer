@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import slugify from 'slugify';
+import { USCurrencyFormat } from "./currencyFormatter";
 // IMPORTED PROPS: features, feature, idx, featureHash, optionsSelected
 
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
+/* const USCurrencyFormat = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD'
-});
+}); */
 
 export class Option extends Component {
 
