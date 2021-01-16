@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { USCurrencyFormat } from "./currencyFormatter";
 
-/* const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD'
-}); */
-
 export class CartItem extends Component {
   render() {
     return (

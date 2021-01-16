@@ -2,11 +2,6 @@ import React, { Component, Fragment } from 'react';
 import CartItem from './CartItem';
 import Total from "./Total";
 
-/* const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD'
-}); */
-
 export class Cart extends Component {
   
   render() {
@@ -21,15 +16,6 @@ export class Cart extends Component {
           feature={feature} 
           selectedOption={selectedOption}
         >
-          {/*
-        <div className="summary__option" key={featureHash}>
-          <div className="summary__option__label">{feature} </div>
-          <div className="summary__option__value">{selectedOption.name}</div>
-          <div className="summary__option__cost">
-            {USCurrencyFormat.format(selectedOption.cost)}
-          </div>
-        </div> 
-      */}
         </CartItem>
         
       )
