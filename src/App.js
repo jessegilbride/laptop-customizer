@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-/* // Normalizes string as a slug - a string that is safe to use in both URLs and html attributes
-import slugify from 'slugify'; */
-import Total from "./Total";
 import './App.css';
 import Cart from './Cart';
 import Features from './Features';
@@ -25,7 +22,7 @@ class App extends Component {
       },
       'Video Card': {
         name: 'Toyota Corolla 1.5v',
-        cost: 1150.98
+        cost: 1150
       },
       Display: {
         name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
@@ -35,6 +32,11 @@ class App extends Component {
   };
 
   updateFeature = (feature, newValue) => {
+
+    /* DEBUG */
+    // console.log(feature);
+    // console.log(newValue);
+
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
     this.setState({
@@ -129,10 +131,10 @@ class App extends Component {
                 {USCurrencyFormat.format(total)}
               </div>
             </div> */}
-            <Total 
+            {/* <Total 
               // USCurrencyFormat={USCurrencyFormat} 
               state={this.state} 
-            />
+            /> */}
           </section>
 
         </main>

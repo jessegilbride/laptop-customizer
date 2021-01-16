@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import CartItem from './CartItem';
+import Total from "./Total";
 
 /* const USCurrencyFormat = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -15,7 +16,11 @@ export class Cart extends Component {
       const selectedOption = this.props.state.selected[feature];
 
       return (
-        <CartItem featureHash={featureHash} feature={feature} selectedOption={selectedOption}>
+        <CartItem 
+          key={featureHash} 
+          feature={feature} 
+          selectedOption={selectedOption}
+        >
           {/*
         <div className="summary__option" key={featureHash}>
           <div className="summary__option__label">{feature} </div>
@@ -33,6 +38,7 @@ export class Cart extends Component {
     return (
       <Fragment>
         {summary}
+        <Total state={this.props.state} />
       </Fragment>
     )
   }

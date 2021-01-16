@@ -27,7 +27,7 @@ const FEATURES = {
   "Video Card": [
     {
       name: 'Toyota Corolla 1.5v',
-      cost: 1150.98
+      cost: 1150
     },
     {
       name: 'Mind mild breeze 2000',
@@ -45,7 +45,5 @@ const FEATURES = {
     },
   ]
 };
-
-console.clear();
 
 ReactDOM.render(<App features={FEATURES}/>, document.getElementById('root'));
