@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import slugify from 'slugify';
-import { USCurrencyFormat } from "./currencyFormatter";
 import Part from './Part';
 /* 
-IMPORTED PROPS:
+PROPS PASSED IN: 
 features={this.props.features}
 feature={feature}
 idx={idx}
@@ -25,24 +24,16 @@ export class Option extends Component {
 
       return (
         // this is a single option
-        
-        <div key={itemHash} className="feature__item">
-          <input
-            type="radio"
-            id={itemHash}
-            className="feature__option"
-            // name={slugify(this.props.feature)}
-            name={this.props.feature}
-            checked={item.name === this.props.optionsSelected[this.props.feature].name}
-            onChange={e => this.props.onUpdateFeature(this.props.feature, item)}
-          />
-          <label htmlFor={itemHash} className="feature__label">
-            {item.name} ({USCurrencyFormat.format(item.cost)})
-          </label>
-        </div>
-        
+        <Part 
+          key={itemHash}
+          item={item}
+          itemHash={itemHash}
+          feature={this.props.feature}
+          optionsSelected={this.props.optionsSelected}
+          onUpdateFeature={this.props.onUpdateFeature}
+        >
+        </Part>
       );
-
     });
     
     return (

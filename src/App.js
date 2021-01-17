@@ -48,7 +48,7 @@ class App extends Component {
           <form className="main__form">
             <h2>Customize your laptop</h2>
             <MainForm 
-              optionsSelected={this.state.selected} 
+              optionsSelected={this.state.selected}
               features={FEATURES}
               onUpdateFeature={this.updateFeature}
             />

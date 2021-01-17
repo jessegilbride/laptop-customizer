@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import Option from './Option';
+/* 
+IMPORTED PROPS: 
+optionsSelected={this.state.selected}
+features={FEATURES}
+onUpdateFeature={this.updateFeature}
+*/
 
 export class MainForm extends Component {
   
@@ -23,9 +29,8 @@ export class MainForm extends Component {
         />
       )
 
-    }); // END of map() that creates "features"
+    });
 
-    // The final component return, inside render()
     return (
       <div>
         {features}
