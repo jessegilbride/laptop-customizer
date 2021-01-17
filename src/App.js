@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Cart from './Cart';
-import Features from './Features';
+import MainForm from './MainForm';
 
 class App extends Component {
   state = {
@@ -45,7 +45,7 @@ class App extends Component {
 
           <form className="main__form">
             <h2>Customize your laptop</h2>
-            <Features 
+            <MainForm 
               optionsSelected={this.state.selected} 
               features={this.props.features}
               onUpdateFeature={this.updateFeature}

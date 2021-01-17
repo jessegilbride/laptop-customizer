@@ -1,37 +1,44 @@
-import React, { Component } from 'react';
-import Option from './Option';
+const FEATURES = {
+  Processor: [
+    {
+      name: '17th Generation Intel Core HB (7 Core with donut spare)',
+      cost: 700
+    },
+    {
+      name: 'Professor X AMD Fire Breather with sidewinder technology',
+      cost: 1200
+    }
+  ],
+  "Operating System": [
+    {
+      name: 'Ubuntu Linux 16.04',
+      cost: 200
+    },
+    {
+      name: 'Bodhi Linux',
+      cost: 300
+    }
+  ],
+  "Video Card": [
+    {
+      name: 'Toyota Corolla 1.5v',
+      cost: 1150
+    },
+    {
+      name: 'Mind mild breeze 2000',
+      cost: 1345
+    }
+  ],
+  Display: [
+    {
+      name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
+      cost: 1500
+    },
+    {
+      name: '15.3" HGTV (3840 x 2160) Home makeover edition',
+      cost: 1400
+    },
+  ]
+};
 
-export class Features extends Component {
-  
-  render() {
-
-    // Object.keys returns just the names of features: ["Processor", "Operating System", "Video Card", "Display"]
-    // Then map over that array, referring to each one as "feature"
-    const features = Object.keys(this.props.features).map((feature, idx) => {
-      // "featureHash" is used as the key for each block in the features list, passed into <Option> component
-      const featureHash = feature + '-' + idx;
-
-      return (
-        <Option 
-          features={this.props.features} 
-          feature={feature} 
-          idx={idx} 
-          key={featureHash}
-          featureHash={featureHash} 
-          optionsSelected={this.props.optionsSelected} 
-          onUpdateFeature={this.props.onUpdateFeature}
-        />
-      )
-
-    }); // END of map() that creates "features"
-
-    // The final component return, inside render()
-    return (
-      <div>
-        {features}
-      </div>
-    )
-  }
-}
-
-export default Features
+export FEATURES;

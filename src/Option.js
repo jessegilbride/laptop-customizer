@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import slugify from 'slugify';
 import { USCurrencyFormat } from "./currencyFormatter";
+import Part from './Part';
+/* 
+IMPORTED PROPS:
+features={this.props.features}
+feature={feature}
+idx={idx}
+key={featureHash}
+featureHash={featureHash}
+optionsSelected={this.props.optionsSelected}
+onUpdateFeature={this.props.onUpdateFeature}
+ */
 
 export class Option extends Component {
 
@@ -14,6 +25,7 @@ export class Option extends Component {
 
       return (
         // this is a single option
+        
         <div key={itemHash} className="feature__item">
           <input
             type="radio"
@@ -28,6 +40,7 @@ export class Option extends Component {
             {item.name} ({USCurrencyFormat.format(item.cost)})
           </label>
         </div>
+        
       );
 
     });
