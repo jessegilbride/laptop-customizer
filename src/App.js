@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
 import Cart from './Cart';
 import MainForm from './MainForm';
+import FEATURES from './features';
+import './App.css';
 
 class App extends Component {
+  // initialized state lives here to populate child components: MainForm and Cart
   state = {
     selected: {
       Processor: {
@@ -25,8 +27,8 @@ class App extends Component {
     }
   };
 
+  // update function lives here because state is in this component
   updateFeature = (feature, newValue) => {
-
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
     this.setState({
@@ -47,7 +49,7 @@ class App extends Component {
             <h2>Customize your laptop</h2>
             <MainForm 
               optionsSelected={this.state.selected} 
-              features={this.props.features}
+              features={FEATURES}
               onUpdateFeature={this.updateFeature}
             />
           </form>
